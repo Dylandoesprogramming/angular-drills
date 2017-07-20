@@ -1,9 +1,21 @@
 <html ng-app="apiApp">
-	<body>
-		
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-		<script src="app.js"></script>
-		<script src="controller.js"></script>
-		<script src="service.js"></script>
-	</body>
+
+<head>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body ng-controller="apiCtrl">
+    <input type="text" ng-model="searchPokemon" placeholder="Type a pokemon in here to get their info!">
+    <button type="button" ng-click="getPokemon(searchPokemon)">Find that Pokemon!</button>
+    <div id="pokemon_display">
+        <p>{{pokemon.name}}</p>
+        <img ng-src="{{pokemon.sprites.front_default}}">
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+    <script src="service.js"></script>
+</body>
+
 </html>
